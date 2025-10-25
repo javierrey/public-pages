@@ -5,14 +5,16 @@
   "private": true,
   "license": "MIT",
   "description": "view lib package",
-  "author": "JR <javier.rey.eu@gmail.com> (https://javierrey.github.io)",
   "main": "",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "build": "echo '@todo build'",
+    "start": "echo '@todo start'",
+    "test": "echo '@todo test'"
+  },
   "dependencies": {},
   "devDependencies": {},
-  "scripts": {
-    "build": "cp -R ./src/public/ ../../",
-    "start": "echo 'start' # TODO",
-    "test": "echo 'test' # TODO"
-  },
   "ignore": {}
 }
