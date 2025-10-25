@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": false,
+    "sourceMap": false,
+    "declarationMap": false,
+    "declaration": false,
+    "composite": false,
+    "strict": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "local_modules", "exclude", "dist", "src/**/*.test.*"]
+}
