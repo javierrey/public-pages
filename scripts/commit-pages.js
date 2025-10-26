@@ -16,5 +16,5 @@ spawnSync('git', ['add', '-f', 'public']);
 spawnSync('git', ['commit', '-m', 'force commit github pages']);
 log(spawnSync('git', ['push']).stderr.toString());
 spawnSync('git', ['add', '.']);
-spawnSync('git', ['commit', '-m', 'force end commit github pages']);
+spawnSync('git', ['commit', '-m', 'end commit github pages']);
 spawnSync('git', ['push']);
