@@ -14,6 +14,7 @@
     "reinstall": "npm run clean && npm install",
     "build": "echo '@todo build'",
     "build:update-pages": "npm run build && node ./scripts/update-pages.js",
+    "build:commit-pages": "npm run build:update-pages && node ./scripts/commit-pages.js",
     "rebuild": "npm install && npm run build",
     "start": "echo '@todo start'",
     "restart": "npm run build && npm run start",

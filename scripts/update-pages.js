@@ -3,12 +3,13 @@
 // @ts-check
 
 // import fs from 'fs';
-import { spawn } from 'child_process';
+import { spawnSync } from 'child_process';
 
 // const fsP = fs.promises;
 // const argv = process.argv.slice(2);
 const base = '.';
+const log = console.log; // eslint-disable-line
 
-spawn('echo', ['update-pages.sh running...']);
+log(spawnSync('echo', ['update-pages.js running...']).stdout.toString());
 
-spawn('cp', ['-R', `${base}/apps/view/src/public/`, `${base}/`]);
+spawnSync('cp', ['-R', `${base}/apps/view/src/public/`, `${base}/`]);
