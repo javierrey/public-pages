@@ -14,11 +14,11 @@
   <script type="module">// @ts-check 'use strict';
   import * as basic from './basic.js';
   const log = console.log; // eslint-disable-line
-  (function ready() {
-    if (!document.body) { return setTimeout(ready, 50, ...arguments); }
+  (function ready(...args) {
+    if (!document.body) return setTimeout(ready, 50, ...args);
     log(`...ready`);
   })();
   </script>
 </head><body bgcolor="#808080">
-  <p>Public pages v0.0.4</p>
+  <p>Public pages v0.0.5</p>
 </body></html>
