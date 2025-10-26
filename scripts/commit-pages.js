@@ -12,7 +12,7 @@ const log = console.log; // eslint-disable-line
 
 const dir = 'public';
 
-log(spawnSync('echo', [`pages-commit.js for ${dir}...`]).stdout.toString());
+log(spawnSync('echo', [`commit-pages.js for ${dir}...`]).stdout.toString());
 
 spawnSync('git', ['add', '-f', dir]);
 spawnSync('git', ['commit', '-m', 'force commit github pages']);
