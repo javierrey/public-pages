@@ -12,12 +12,12 @@ const log = console.log; // eslint-disable-line
 
 const dir = 'public';
 
-log(spawnSync('echo', [`pages-commit.js running for ${dir}...`]).stdout.toString());
+log(spawnSync('echo', [`pages-commit.js for ${dir}...`]).stdout.toString());
 
 spawnSync('git', ['add', '-f', dir]);
 spawnSync('git', ['commit', '-m', 'force commit github pages']);
-log(`push stderr: `, spawnSync('git', ['push']).stderr.toString());
-spawnSync('git', ['add', '.']);
+log(`force push stderr: `, spawnSync('git', ['push']).stderr.toString());
 spawnSync('git', ['rm', '--cached', '-r', dir]);
+spawnSync('git', ['add', '.']);
 spawnSync('git', ['commit', '-m', 'end commit github pages']);
-log(`push stderr: `, spawnSync('git', ['push']).stderr.toString());
+log(`end push stderr: `, spawnSync('git', ['push']).stderr.toString());

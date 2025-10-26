@@ -10,6 +10,8 @@ import { spawnSync } from 'child_process';
 const base = '.';
 const log = console.log; // eslint-disable-line
 
-log(spawnSync('echo', ['update-pages.js running...']).stdout.toString());
+const dir = 'public';
+
+log(spawnSync('echo', [`update-pages.js for ${dir}...`]).stdout.toString());
 
 spawnSync('cp', ['-R', `${base}/apps/view/src/public/`, `${base}/`]);
