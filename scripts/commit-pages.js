@@ -10,11 +10,14 @@ import { spawnSync } from 'child_process';
 // const base = '.';
 const log = console.log; // eslint-disable-line
 
-log(spawnSync('echo', ['pages-commit.js running...']).stdout.toString());
+const dir = 'public';
 
-spawnSync('git', ['add', '-f', 'public']);
+log(spawnSync('echo', [`pages-commit.js running for ${dir}...`]).stdout.toString());
+
+spawnSync('git', ['add', '-f', dir]);
 spawnSync('git', ['commit', '-m', 'force commit github pages']);
-log(spawnSync('git', ['push']).stderr.toString());
+log(`push stderr: `, spawnSync('git', ['push']).stderr.toString());
 spawnSync('git', ['add', '.']);
+spawnSync('git', ['rm', '--cached', '-r', dir]);
 spawnSync('git', ['commit', '-m', 'end commit github pages']);
-spawnSync('git', ['push']);
+log(`push stderr: `, spawnSync('git', ['push']).stderr.toString());
