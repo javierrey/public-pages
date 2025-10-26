@@ -31,9 +31,10 @@ yarn.lock
 [Tt]humbs.db
 ehthumbs.db
 
-/public/
 !/.github/
 !.storybook/
 
 # !_local_modules/**/*
 # !*/*.zip
+
+!/public/
