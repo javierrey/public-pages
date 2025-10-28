@@ -27,13 +27,13 @@ const copyGithubPages = (app) => {
 
 /** @param {string[]} apps, @param {string} title */
 const copyAndIndex = (apps, title) => {
-    let html = `<html><head><title>${title}</title></head><body><h3>${title}</h3><ul>`;
-    apps.forEach((app) => {
-      const exit = copyGithubPages(app);
-      if (!exit) { html += `<li><a href="./${app}">${app}</a></li>`; }
-    });
-    html += '</ul></body></html>';
-    fsP.writeFile(`${base}/${dir}/index.html`, html);
+  let html = `<html><head><title>${title}</title></head><body><h3>${title}</h3><ul>`;
+  apps.forEach((app) => {
+    const exit = copyGithubPages(app);
+    if (!exit) { html += `<li><a href="./${app}">${app}</a></li>`; }
+  });
+  html += '</ul></body></html>';
+  fsP.writeFile(`${base}/${dir}/index.html`, html);
 };
 
 copyAndIndex(apps, 'javierrey.github.io/public-pages');
