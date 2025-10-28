@@ -13,7 +13,7 @@ const base = '.';
 const apps = argv.map((app) => app.replace(/^['"`]|['"`]$/g, ''));
 const dir = 'public';
 
-log(spawnSync('echo', [`update-pages.js for ${dir}: [${apps}]`]).stdout.toString());
+log(`update-pages.js for ${dir}: [${apps}]`);
 
 /** @param {string} app */
 const copyGithubPages = (app) => {
@@ -25,8 +25,8 @@ const copyGithubPages = (app) => {
   return 0;
 };
 
-/** @param {string[]} apps, @param {string} title */
-const copyAndIndex = (apps, title) => {
+/** @param {string} title, @param {string[]} apps */
+const copyAndIndex = (title, ...apps) => {
   let html = `<html><head><title>${title}</title></head><body><h3>${title}</h3><ul>`;
   apps.forEach((app) => {
     const exit = copyGithubPages(app);
@@ -36,4 +36,4 @@ const copyAndIndex = (apps, title) => {
   fsP.writeFile(`${base}/${dir}/index.html`, html);
 };
 
-copyAndIndex(apps, 'javierrey.github.io/public-pages');
+copyAndIndex('javierrey.github.io/public-pages', ...apps);
