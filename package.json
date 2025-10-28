@@ -13,12 +13,12 @@
     "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/** -e !*.ignore.* -e !local_modules/ -e !local_modules/**",
     "reinstall": "npm run clean && npm install",
     "build": "echo '@todo build'",
-    "build:update-pages": "npm run build && node ./scripts/update-pages.js",
     "rebuild": "npm install && npm run build",
     "start": "echo '@todo start'",
     "restart": "npm run build && npm run start",
     "test": "echo '@todo test'",
-    "retest": "npm run build && npm run test"
+    "retest": "npm run build && npm run test",
+    "update-pages": "node ./scripts/update-pages.js 'view'"
   },
   "dependencies": {},
   "devDependencies": {},
